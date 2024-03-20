@@ -3,7 +3,7 @@
 class Trava : public Polje
 {
 public:
-	Trava(): Polje() {}
+	Trava(bool vidljivost = false): Polje(vidljivost) {}
 
 	int poprskaj(int mlaz) override
 	{
@@ -12,15 +12,21 @@ public:
 		return 0;
 	}
 
-	POLJA sadrzaj() override
+	/*POLJA sadrzaj() override
 	{
 		return POLJA::TRAVA;
-	}
+	}*/
 
 	void prikazi() override
 	{
-		std::cout << "i";
+		std::cout << std::setw(4) << "i";
 	}
+
+	bool operator==(POLJA polje)
+	{
+		return polje == POLJA::TRAVA;
+	}
+
 
 };
 

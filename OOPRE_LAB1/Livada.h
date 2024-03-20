@@ -32,6 +32,7 @@ private:
 
 public:
 	Livada(std::string file_name);
+	~Livada();
 
 	int prskaj();
 	void prikazi();

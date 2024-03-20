@@ -10,9 +10,10 @@ void Igrica::pokreni()
 
 		if (!fast)
 		{
-			if (std::cin.get() == 0)
+			if (std::cin.get() == '0')
 				fast = true;
 		}
+
 	}
 
 	std::cout << "Broj poena: " << livada.broj_ruza() << '\n';

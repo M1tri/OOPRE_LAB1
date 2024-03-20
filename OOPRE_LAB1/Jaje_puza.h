@@ -6,29 +6,33 @@ private:
 	int broj = 1;
 
 public:
-	Jaje_puza() : Polje() {};
+	Jaje_puza(bool vidljivost = false) : Polje(vidljivost) {};
 
 	int poprskaj(int mlaz) override
 	{
-		otkriveno = false;
+		otkriveno = true;
 
 		return mlaz + broj;
 	}
 
-	POLJA sadrzaj() override
-	{
-		return POLJA::JAJE_PUZA;
-	}
+	//POLJA sadrzaj() override
+	//{
+	//	return POLJA::JAJE_PUZA;
+	//}
 
 
 	void prikazi() override
 	{
 		if (otkriveno)
-			std::cout << "0";
+			std::cout << std::setw(4) << "0";
 		else
-			std::cout << "i";
+			std::cout << std::setw(4) << "i";
 	}
 
+	bool operator==(POLJA polje)
+	{
+		return polje == POLJA::JAJE_PUZA;
+	}
 };
 
 

@@ -3,7 +3,7 @@
 class Trojanska_ruza : public Polje
 {
 public:
-	Trojanska_ruza(): Polje() {}
+	Trojanska_ruza(bool vidljivost = false): Polje(vidljivost) {}
 
 	int poprskaj(int mlaz) override
 	{
@@ -12,17 +12,22 @@ public:
 		return 0;
 	}
 
-	POLJA sadrzaj() override
-	{
-		return POLJA::TROJANKSA_RUZA;
-	}
+	//POLJA sadrzaj() override
+	//{
+	//	return POLJA::TROJANKSA_RUZA;
+	//}
 
 	void prikazi() override
 	{
 		if (otkriveno)
-			std::cout << "*";
+			std::cout << std::setw(4) << "*";
 		else
-			std::cout << "i";
+			std::cout << std::setw(4) << "i";
+	}
+
+	bool operator==(POLJA polje)
+	{
+		return polje == POLJA::TROJANKSA_RUZA;
 	}
 };
 
